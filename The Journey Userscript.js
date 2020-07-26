@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         The Journey Userscript
 // @namespace    http://tampermonkey.net/
-// @version      Alpha
+// @version      0.1
+// @history      The userscript is created
 // @description  A userscript used for The Journey
 // @author       riben
 // @match        https://artofproblemsolving.com/*
 // @grant        GM_xmlhttpRequest
 // @require  http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
 // ==/UserScript==
-// Need to change match for The Journey forum only and add auto update
 $('head').append(`
 <style>
 @import url(//db.onlinewebfonts.com/c/04631057dd8d776a913255a96925bc33?family=Creepy);
