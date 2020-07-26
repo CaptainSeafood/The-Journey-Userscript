@@ -7,8 +7,8 @@
 // @author       riben
 // @match        https://artofproblemsolving.com/*
 // @grant        GM_xmlhttpRequest
-// @require  http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
-// @downloadURL https://raw.githubusercontent.com/riben123/The-Journey-Userscript/0.1/The%20Journey%20Userscript.js
+// @require      http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
+// @downloadURL  https://raw.githubusercontent.com/riben123/The-Journey-Userscript/master/The%20Journey%20Userscript.js
 // ==/UserScript==
 $('head').append(`
 <style>
