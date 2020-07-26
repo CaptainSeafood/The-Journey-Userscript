@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         The Journey Userscript
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      0.2
 // @history      Added auto update
 // @description  A userscript used for The Journey
 // @author       riben
