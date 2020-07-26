@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         The Journey Userscript
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @history      The userscript is created
+// @version      1.0
+// @history      Added auto update
 // @description  A userscript used for The Journey
 // @author       riben
 // @match        https://artofproblemsolving.com/*
 // @grant        GM_xmlhttpRequest
 // @require  http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
+// @downloadURL https://raw.githubusercontent.com/riben123/The-Journey-Userscript/0.1/The%20Journey%20Userscript.js
 // ==/UserScript==
 $('head').append(`
 <style>
