@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         The Journey Userscript
 // @namespace    http://tampermonkey.net/
-// @version      0.2
-// @history      Added auto update
+// @version      0.3
+// @history      Changed emoji image links, added proper helpers, and removed duwipr's temporary cosmetic
 // @description  A userscript used for The Journey
 // @author       riben
 // @match        https://artofproblemsolving.com/*
@@ -837,7 +837,13 @@ setInterval(rankup, 3000);
 // Helpers and Retired
 $('head').append(`
 <style>
-a[href*="314159265"] {
+a[href*="254592"] {
+color: blue;
+}
+a[href*="507219"] {
+color: blue;
+}
+a[href*="381053"] {
 color: blue;
 }
 a[href*="3141592657"] {
@@ -846,17 +852,17 @@ color: orange;
 </style>
 `);
 // Cosmetics
-waitForKeyElements ("div.cmty-phone-inline.cmty-post-top-inline", cosmetic);
+/*waitForKeyElements ("div.cmty-phone-inline.cmty-post-top-inline", cosmetic);
 function cosmetic() {
 var test=document.getElementsByClassName("cmty-phone-inline cmty-post-top-inline");
 for (var i = 0; i < test.length; i++) {
 if (test[i].childNodes[1]==test[i].querySelectorAll("a[href='/community/user/254592']")[0]) {
-/* Two next siblings is upvote, four next siblings is body */
+Two next siblings is upvote, four next siblings is body
     var body=test[i].nextSibling.nextSibling.nextSibling.nextSibling;
     body.setAttribute("style","background-color: pink;");
 }
 }};
-setInterval(cosmetic, 3000);
+setInterval(cosmetic, 3000);*/
 // Accept Button
 function accept() {
   $('.cmty-post-body').each(function() {
@@ -877,12 +883,12 @@ setInterval(accept, 3000);
 function thinking() {
   $('.cmty-post-body').each(function() {
       var text = $(this).html();
-      var code = '<div class="thinking" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36qCo.png"></img></div>';
+      var code = '<div class="thinking" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/9/3/4/934659b6131e140d3dd89e17fe75f8d55344dc2a.png"></img></div>';
       $(this).html(text.replace(':thinking:',code));
   });
       $('.cmty-post-preview-text.aops-scroll-content').each(function() {
       var text = $(this).html();
-      var code = '<div class="thinking" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36qCo.png"></img></div>';
+      var code = '<div class="thinking" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/9/3/4/934659b6131e140d3dd89e17fe75f8d55344dc2a.png"></img></div>';
       $(this).html(text.replace(':thinking:',code));
   });
 }
@@ -891,12 +897,12 @@ setInterval(thinking, 3000);
 function rolling() {
   $('.cmty-post-body').each(function() {
       var text = $(this).html();
-      var code = '<div class="rolling" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36qCH.png"></img></div>';
+      var code = '<div class="rolling" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/2/6/7/267eedb7eb35b92a8f25ef2a9d3bb7a7cf9d6d4f.png"></img></div>';
       $(this).html(text.replace(':rolling:',code));
   });
       $('.cmty-post-preview-text.aops-scroll-content').each(function() {
       var text = $(this).html();
-      var code = '<div class="rolling" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36qCH.png"></img></div>';
+      var code = '<div class="rolling" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/2/6/7/267eedb7eb35b92a8f25ef2a9d3bb7a7cf9d6d4f.png"></img></div>';
       $(this).html(text.replace(':rolling:',code));
   });
 }
@@ -905,12 +911,12 @@ setInterval(rolling, 3000);
 function distraught() {
   $('.cmty-post-body').each(function() {
       var text = $(this).html();
-      var code = '<div class="distraught" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36qDa.png"></img></div>';
+      var code = '<div class="distraught" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/d/a/1/da12b4d41dd8c593117d5cf5ba22017b2f1995b7.png"></img></div>';
       $(this).html(text.replace(':distraught:',code));
   });
       $('.cmty-post-preview-text.aops-scroll-content').each(function() {
       var text = $(this).html();
-      var code = '<div class="distraught" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36qDa.png"></img></div>';
+      var code = '<div class="distraught" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/d/a/1/da12b4d41dd8c593117d5cf5ba22017b2f1995b7.png"></img></div>';
       $(this).html(text.replace(':distraught:',code));
   });
 }
@@ -919,12 +925,12 @@ setInterval(distraught, 3000);
 function xD() {
   $('.cmty-post-body').each(function() {
       var text = $(this).html();
-      var code = '<div class="xD" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36rje.png"></img></div>';
+      var code = '<div class="xD" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/c/3/6/c36c26cf9db08186b884f01166c8205a39926e5b.png"></img></div>';
       $(this).html(text.replace(':xD:',code));
   });
       $('.cmty-post-preview-text.aops-scroll-content').each(function() {
       var text = $(this).html();
-      var code = '<div class="xD" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36rje.png"></img></div>';
+      var code = '<div class="xD" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/c/3/6/c36c26cf9db08186b884f01166c8205a39926e5b.png"></img></div>';
       $(this).html(text.replace(':xD:',code));
   });
 }
@@ -933,12 +939,12 @@ setInterval(xD, 3000);
 function facepalm() {
   $('.cmty-post-body').each(function() {
       var text = $(this).html();
-      var code = '<div class="facepalm" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36sfS.png"></img></div>';
+      var code = '<div class="facepalm" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/5/3/2/5321e63d6445cd53c595ec5944462b92009f7b22.png"></img></div>';
       $(this).html(text.replace(':facepalm:',code));
   });
       $('.cmty-post-preview-text.aops-scroll-content').each(function() {
       var text = $(this).html();
-      var code = '<div class="facepalm" style="display: inline"><img class="bbcode_img" src="https://funkyimg.com/i/36sfS.png"></img></div>';
+      var code = '<div class="facepalm" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/5/3/2/5321e63d6445cd53c595ec5944462b92009f7b22.png"></img></div>';
       $(this).html(text.replace(':facepalm:',code));
   });
 }
