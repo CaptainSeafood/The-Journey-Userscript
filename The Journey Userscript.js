@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         The Journey Userscript
 // @namespace    http://tampermonkey.net/
-// @version      0.3
-// @history      Changed emoji image links, added proper helpers, and removed duwipr's temporary cosmetic
+// @version      0.4
+// @history      Fixed bug where polls and python programs do not respons after 3 seconds unless the user refreshes
 // @description  A userscript used for The Journey
 // @author       riben
 // @match        https://artofproblemsolving.com/*
@@ -590,7 +590,7 @@ setTimeout(location.reload.bind(location), 5000);
 `);
 // Signup Button
 function signup() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="signup" type="button" onclick="check_signup()" value="Signup"/>';
       var code2= '</input>';
@@ -606,7 +606,7 @@ function signup() {
 setInterval(signup, 3000);
 // Journey Coin Emoji
 function jc() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code = '<div class="jc" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/3/3/7/337ac130719ed3f965843c0ed8ca5df68dcaa816.png" alt="https://funkyimg.com/i/36dTG.png" width="3%"></img></div>';
       $(this).html(text.replace(':jc:',code));
@@ -620,7 +620,7 @@ function jc() {
 setInterval(jc, 3000);
 // Deposit Button
 function deposit() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="deposit" type="button" onclick="check_deposit()" value="Deposit"/>';
       var code2= '</input>';
@@ -636,7 +636,7 @@ function deposit() {
 setInterval(deposit, 3000);
 // Purchase Button
 function purchase() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="purchase" type="button" onclick="check_purchase()" value="Purchase"/>';
       var code2= '</input>';
@@ -755,7 +755,7 @@ else if (tag[i].textContent=='low quality') {
 setInterval(tag_change, 500);
 // Accumulation Button
 function accumulation() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="accumulation" type="button" onclick="check_accumulation()" value="Accumulation"/>';
       var code2= '</input>';
@@ -777,7 +777,7 @@ function blur() {
       var code2= '</span>';
       $(this).html(text.replace('[blur]',code1).replace('[/blur]',code2));
   });
-              $('.cmty-post-body').each(function() {
+              $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<span class=blur>';
       var code2= '</span>';
@@ -793,7 +793,7 @@ function o() {
       var code2= '</span>';
       $(this).html(text.replace('[o]',code1).replace('[/o]',code2));
   });
-              $('.cmty-post-body').each(function() {
+              $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<span class=o>';
       var code2= '</span>';
@@ -803,7 +803,7 @@ function o() {
 setInterval(o, 3000);
 // Nominate Button
 function nominate() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="nominate" type="button" onclick="check_nominate()" value="Nominate"/>';
       var code2= '</input>';
@@ -819,7 +819,7 @@ function nominate() {
 setInterval(nominate, 3000);
 // Rankup Button
 function rankup() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="rankup" type="button" onclick="check_rankup()" value="Rankup"/>';
       var code2= '</input>';
@@ -865,7 +865,7 @@ Two next siblings is upvote, four next siblings is body
 setInterval(cosmetic, 3000);*/
 // Accept Button
 function accept() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<input id="accept" type="button" onclick="check_accept(this)" value="Accept"/>';
       var code2= '</input>';
@@ -881,7 +881,7 @@ function accept() {
 setInterval(accept, 3000);
 // Thinking Emoji
 function thinking() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code = '<div class="thinking" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/9/3/4/934659b6131e140d3dd89e17fe75f8d55344dc2a.png"></img></div>';
       $(this).html(text.replace(':thinking:',code));
@@ -895,7 +895,7 @@ function thinking() {
 setInterval(thinking, 3000);
 // Rolling Eyes Emoji
 function rolling() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code = '<div class="rolling" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/2/6/7/267eedb7eb35b92a8f25ef2a9d3bb7a7cf9d6d4f.png"></img></div>';
       $(this).html(text.replace(':rolling:',code));
@@ -909,7 +909,7 @@ function rolling() {
 setInterval(rolling, 3000);
 // Distraught Emoji
 function distraught() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code = '<div class="distraught" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/d/a/1/da12b4d41dd8c593117d5cf5ba22017b2f1995b7.png"></img></div>';
       $(this).html(text.replace(':distraught:',code));
@@ -923,7 +923,7 @@ function distraught() {
 setInterval(distraught, 3000);
 // xD Emoji
 function xD() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code = '<div class="xD" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/c/3/6/c36c26cf9db08186b884f01166c8205a39926e5b.png"></img></div>';
       $(this).html(text.replace(':xD:',code));
@@ -937,7 +937,7 @@ function xD() {
 setInterval(xD, 3000);
 // Facepalm Emoji
 function facepalm() {
-  $('.cmty-post-body').each(function() {
+  $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code = '<div class="facepalm" style="display: inline"><img class="bbcode_img" src="//cdn.artofproblemsolving.com/images/5/3/2/5321e63d6445cd53c595ec5944462b92009f7b22.png"></img></div>';
       $(this).html(text.replace(':facepalm:',code));
@@ -957,7 +957,7 @@ function reverse() {
       var code2= '</span>';
       $(this).html(text.replace('[reverse]',code1).replace('[/reverse]',code2));
   });
-              $('.cmty-post-body').each(function() {
+              $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<span class="reverse">';
       var code2= '</span>';
@@ -973,7 +973,7 @@ function updown() {
       var code2= '</span>';
       $(this).html(text.replace('[updown]',code1).replace('[/updown]',code2));
   });
-              $('.cmty-post-body').each(function() {
+              $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<span class="updown">';
       var code2= '</span>';
@@ -989,7 +989,7 @@ function hl() {
       var code2= '</span>';
       $(this).html(text.replace('[hl]',code1).replace('[/hl]',code2));
   });
-              $('.cmty-post-body').each(function() {
+              $('.cmty-post-html').each(function() {
       var text = $(this).html();
       var code1 = '<span class="hl">';
       var code2= '</span>';
