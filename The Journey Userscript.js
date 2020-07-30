@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         The Journey Userscript
 // @namespace    http://tampermonkey.net/
-// @version      0.4
-// @history      Fixed bug where polls and python programs do not respons after 3 seconds unless the user refreshes
+// @version      1.0
+// @history      Added Firecat font, changed staff member positions to be official, and changed userscript to work on The Journey only
 // @description  A userscript used for The Journey
 // @author       riben
-// @match        https://artofproblemsolving.com/*
+// @match        https://artofproblemsolving.com/community/c1228935*
 // @grant        GM_xmlhttpRequest
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
 // @downloadURL  https://raw.githubusercontent.com/riben123/The-Journey-Userscript/master/The%20Journey%20Userscript.js
@@ -16,6 +16,8 @@ $('head').append(`
 @font-face {font-family: "Creepy"; src: url("//db.onlinewebfonts.com/t/04631057dd8d776a913255a96925bc33.eot"); src: url("//db.onlinewebfonts.com/t/04631057dd8d776a913255a96925bc33.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/04631057dd8d776a913255a96925bc33.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/04631057dd8d776a913255a96925bc33.woff") format("woff"), url("//db.onlinewebfonts.com/t/04631057dd8d776a913255a96925bc33.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/04631057dd8d776a913255a96925bc33.svg#Creepy") format("svg"); }
 @import url(//db.onlinewebfonts.com/c/009943a6e511476a8e88fa74c11797d2?family=Zombie+Guts);
 @font-face {font-family: "Zombie Guts"; src: url("//db.onlinewebfonts.com/t/009943a6e511476a8e88fa74c11797d2.eot"); src: url("//db.onlinewebfonts.com/t/009943a6e511476a8e88fa74c11797d2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/009943a6e511476a8e88fa74c11797d2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/009943a6e511476a8e88fa74c11797d2.woff") format("woff"), url("//db.onlinewebfonts.com/t/009943a6e511476a8e88fa74c11797d2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/009943a6e511476a8e88fa74c11797d2.svg#Zombie Guts") format("svg"); }
+@import url(//db.onlinewebfonts.com/c/16abf4fcdf02f128bff40047d58c5956?family=Firecat);
+@font-face {font-family: "Firecat"; src: url("//db.onlinewebfonts.com/t/16abf4fcdf02f128bff40047d58c5956.eot"); src: url("//db.onlinewebfonts.com/t/16abf4fcdf02f128bff40047d58c5956.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/16abf4fcdf02f128bff40047d58c5956.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/16abf4fcdf02f128bff40047d58c5956.woff") format("woff"), url("//db.onlinewebfonts.com/t/16abf4fcdf02f128bff40047d58c5956.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/16abf4fcdf02f128bff40047d58c5956.svg#Firecat") format("svg"); }
 #signup {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -837,12 +839,6 @@ setInterval(rankup, 3000);
 // Helpers and Retired
 $('head').append(`
 <style>
-a[href*="254592"] {
-color: blue;
-}
-a[href*="507219"] {
-color: blue;
-}
 a[href*="381053"] {
 color: blue;
 }
